@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LightWave — LED Circuit</title>
+  <style>
+    :root {
+      --bg: #0f1220; --card: #171a2b; --text: #e8ecff; --muted: #aab3d6; --accent: #7aa2ff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+           background: linear-gradient(180deg, var(--bg), #0b0e1a 60%); color: var(--text); line-height: 1.6; }
+    .wrap { max-width: 900px; margin: 40px auto; padding: 24px; }
+    header, main { background: var(--card); border-radius: 20px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1 { margin: 0; font-size: clamp(24px, 4vw, 34px); }
+    h2 { color: var(--accent); margin: 20px 0 10px; }
+    .video { margin-top: 14px; border-radius: 14px; overflow: hidden; border: 2px solid #2b3156; }
+    .meta { color: var(--muted); font-size: 14px; }
+    footer { color: var(--muted); text-align: center; margin: 20px 0 40px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>LightWave — LED Circuit</h1>
+      <nav><a href="index.html">← Back to Home</a></nav>
+    </header>
+
+    <main>
+      <h2>Video</h2>
+      <div class="video">
+        <video controls playsinline width="100%" preload="metadata" poster="IMG_3542.jpg">
+          <source src=" LED CIRCUIT VID + MUSIC .mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="meta">If the video doesn’t play, <a href=" LED CIRCUIT VID + MUSIC .mp4" download>download the MP4</a>.</p>
+
+      <h2>Description</h2>
+      <p>In this short video, the LED circuit lights up with shifting colors and steady pulses. The camera focuses on the breadboard and its connected components, with the Arduino at its center. The LEDs change smoothly between red, green, blue, and blended colors, creating a bright gradient effect.</p>
+      <p>The changes appear controlled by potentiometers, with each fade and shift following a set pattern. As the lights move, individual LEDs turn on in waves, giving the sense of motion along the strip. The glow also reflects softly on the surrounding surface, adding to the overall look.</p>
+      <p>The video shows both the clear wiring: jumper cables, resistors, and power lines as well as the visual result of the programming. By keeping the frame close to the circuit, the focus stays on how the code and hardware work together. This recording shows that the project works and that a simple setup can still create an eye-catching effect.</p>
+    </main>
+
+    <footer>
+      © <span id="y"></span> Aliston Ma · Built with HTML/CSS on GitHub Pages
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
