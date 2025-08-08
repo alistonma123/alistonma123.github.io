@@ -27,7 +27,7 @@
     }
     header {
       display: grid;
-      grid-template-columns: 160px 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
       align-items: center;
       background: var(--card);
@@ -36,8 +36,8 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
     header img {
-      width: 160px;
-      height: 160px;
+      width: 100%;
+      max-height: 350px;
       border-radius: 16px;
       object-fit: cover;
       border: 2px solid #2b3156;
@@ -81,8 +81,8 @@
 <body>
   <div class="wrap">
     <header>
-      <!-- Keep this file name as foo.png (same folder as index.html) -->
-      <img src="foo.png" alt="Portrait of Aliston Ma" />
+      <!-- Your uploaded image -->
+      <img src="IMG_3542.jpg" alt="Aliston Ma looking out at the horizon" />
       <div>
         <h1>Aliston Ma</h1>
         <div class="subtitle">Rising 4th-year Computer Engineering @ UCSB • Circuits • Coding • Creative Tech</div>
