@@ -45,6 +45,10 @@
         <a href="circuit.html">LightWave — LED Circuit (video + description)</a>
       </div>
 
+    
+      <h2>Interactive Sketch</h2>
+      <div id="sketch-holder" style="margin:16px 0; border:1px solid #2b3156; border-radius:12px; overflow:hidden;"></div>
+
       <h2>Contact</h2>
       <p><strong>Email:</strong> a_ma@ucsb.edu<br />
          <strong>GitHub:</strong> <a href="https://github.com/alistonma123">github.com/alistonma123</a></p>
@@ -52,6 +56,11 @@
 
     <footer>© <span id="y"></span> Aliston Ma · Built with HTML/CSS on GitHub Pages</footer>
   </div>
+
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  
+  <!-- Load p5.js and your sketch -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+  <script src="sketch.js"></script>
 </body>
 </html>
