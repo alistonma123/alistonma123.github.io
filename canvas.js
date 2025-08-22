@@ -16,8 +16,8 @@ const particles = Array.from({ length: 80 }, () => ({
   dy: (Math.random() - 0.5) * 0.5,
 }));
 
-let running = false;     // animation starts only after ENTER
-let alpha = 0;           // used for fade-in effect
+let running = false;
+let alpha = 0;
 
 function draw() {
   if (!running) {
@@ -50,5 +50,5 @@ draw();
 
 window.startCanvas = function () {
   running = true;
-  alpha = 0; // reset fade so it eases in
+  alpha = 0;
 };
