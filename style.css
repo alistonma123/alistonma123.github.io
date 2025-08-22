@@ -12,19 +12,25 @@
   z-index: 200;
   transition: opacity 1s ease;
 }
-
 #intro.fade-out {
   opacity: 0;
   pointer-events: none;
 }
-
 #intro-text {
   font-size: 22px;
   line-height: 1.5;
   white-space: pre-line;
   max-width: 600px;
 }
-
+#cursor {
+  font-size: 22px;
+  margin-top: 10px;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
 #enter-btn {
   margin-top: 30px;
   padding: 10px 20px;
@@ -37,7 +43,14 @@
   opacity: 0;
   transition: opacity 1s;
 }
-
 #enter-btn.show {
   opacity: 1;
+}
+#myCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
