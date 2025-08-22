@@ -1,8 +1,8 @@
 const introLines = [
   "Welcome to my site.",
   "I’m Aliston Ma.",
-  "Engineer • Designer • Builder.",
-  "Blending circuits, code, and creativity."
+  "Engineer • Designer • Coder.",
+  " Click Enter Below to Proceed."
 ];
 
 let i = 0;
