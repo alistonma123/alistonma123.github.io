@@ -1,8 +1,8 @@
 const introLines = [
   "Welcome to my site.",
   "I’m Aliston Ma.",
-  "Engineer • Designer • Coder.",
-  " Click Enter Below to Proceed."
+  "Engineer • Designer • Builder.",
+  "Click Enter Below to Proceed"
 ];
 
 let i = 0;
@@ -34,7 +34,5 @@ enterBtn.addEventListener("click", () => {
   document.getElementById("intro").classList.add("fade-out");
   setTimeout(() => {
     document.getElementById("intro").style.display = "none";
-    document.getElementById("sitewrap").style.display = "block";
-    if (window.startCanvas) window.startCanvas();
   }, 1000);
 });
