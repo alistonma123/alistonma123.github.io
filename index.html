@@ -4,15 +4,64 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aliston Ma — Autobiography</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root { --bg:#0f1220; --card:#171a2b; --text:#e8ecff; --muted:#aab3d6; --accent:#7aa2ff; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:linear-gradient(180deg,var(--bg),#0b0e1a 60%);color:var(--text);line-height:1.6}
+    .wrap{max-width:900px;margin:40px auto;padding:24px}
+    header{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;background:var(--card);border-radius:20px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    header img{width:100%;max-height:350px;border-radius:16px;object-fit:cover;border:2px solid #2b3156}
+    h1{margin:0 0 6px;font-size:clamp(26px,4vw,38px);letter-spacing:.3px}
+    .subtitle{margin-top:2px;color:var(--muted)}
+    main{margin-top:24px;background:var(--card);border-radius:20px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    h2{margin-top:0;font-size:clamp(20px,3vw,26px);color:var(--accent)}
+    p{margin:0 0 14px}
+    .projects a{display:block;background:#14182c;border:1px solid #2b3156;border-radius:14px;padding:14px;text-decoration:none;color:var(--text)}
+    .projects a:hover{border-color:#3b4580}
+    footer{color:var(--muted);text-align:center;margin:20px 0 40px;font-size:14px}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    @media (max-width:640px){header{grid-template-columns:1fr;text-align:center}header img{margin:0 auto}}
+
+    #intro {
+      position: fixed;
+      inset: 0;
+      background: black;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: monospace;
+      text-align: center;
+      z-index: 200;
+      transition: opacity 1s ease;
+    }
+    #intro.fade-out { opacity: 0; pointer-events: none; }
+    #intro-text { font-size: 22px; line-height: 1.5; white-space: pre-line; max-width: 600px; }
+    #enter-btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    #enter-btn.show { opacity: 1; }
+  </style>
 </head>
 <body>
+
   <div id="intro">
     <div id="intro-text"></div>
     <button id="enter-btn">ENTER</button>
   </div>
 
-  <div class="wrap" id="sitewrap" style="display:none;">
+  <div class="wrap">
     <header>
       <img src="IMG_3542.jpg" alt="Aliston Ma looking out at the horizon" />
       <div>
@@ -43,11 +92,9 @@
     <footer>© <span id="y"></span> Aliston Ma · Built with HTML/CSS on GitHub Pages</footer>
   </div>
 
-  <canvas id="myCanvas"></canvas>
-  <script src="canvas.js"></script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
   <script src="sketch.js"></script>
   <script src="intro.js"></script>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
