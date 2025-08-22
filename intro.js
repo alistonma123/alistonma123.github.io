@@ -7,7 +7,7 @@ const introLines = [
 
 let i = 0;
 let j = 0;
-const speed = 60; // typing speed
+const speed = 60;
 const introDiv = document.getElementById("intro-text");
 const enterBtn = document.getElementById("enter-btn");
 
@@ -18,20 +18,23 @@ function typeWriter() {
       j++;
       setTimeout(typeWriter, speed);
     } else {
-      introDiv.innerHTML += "\n"; // new line
+      introDiv.innerHTML += "\n";
       i++;
       j = 0;
-      setTimeout(typeWriter, 500); // pause between lines
+      setTimeout(typeWriter, 600);
     }
   } else {
-    enterBtn.style.display = "inline-block"; // show enter
+    enterBtn.classList.add("show");
   }
 }
 
 typeWriter();
 
-// Handle enter button
 enterBtn.addEventListener("click", () => {
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("sitewrap").style.display = "block";
+  document.getElementById("intro").classList.add("fade-out");
+  setTimeout(() => {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("sitewrap").style.display = "block";
+    if (window.startCanvas) window.startCanvas();
+  }, 1000);
 });
