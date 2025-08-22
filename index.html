@@ -7,54 +7,57 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Background canvas -->
-  <canvas id="myCanvas"></canvas>
+  <!-- Intro Splash -->
+  <div id="intro">
+    <div id="intro-text"></div>
+    <button id="enter-btn" style="display:none;">ENTER</button>
+  </div>
 
-  <div class="wrap">
-    <header class="inlinewrapper">
-      <img src="IMG_3542.jpg" alt="Aliston Ma looking out at the horizon" />
-      <div>
-        <h1>Aliston Ma</h1>
-        <div class="subtitle">
-          Rising 4th-year Computer Engineering @ UCSB • Circuits • Coding • Creative Tech
+  <!-- Main Site (hidden at first) -->
+  <div id="sitewrap" style="display:none;">
+    <canvas id="myCanvas"></canvas>
+
+    <div class="wrap">
+      <header class="inlinewrapper">
+        <img src="IMG_3542.jpg" alt="Aliston Ma" />
+        <div>
+          <h1>Aliston Ma</h1>
+          <div class="subtitle">Rising 4th-year Computer Engineering @ UCSB • Circuits • Coding • Creative Tech</div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <main>
-      <div class="inlinewrapper">
-        <h2>Autobiography</h2>
-        <p>I’m a rising fourth-year Computer Engineering major at UC Santa Barbara, and I love building things at the intersection of circuits, electronics, and code. Technology and design feel like two halves of the same brain to me—one handles precision and reliability, the other brings story and emotion. I’m happiest when I can blend both to make interactive projects that are clear, playful, and useful.</p>
-        <p>I grew up in a Chinese household while living in Mexico and studying in the United States. For years I crossed the border daily—school in the U.S., then back home to Mexico. That routine dropped me into different languages, customs, and ways of seeing the world. I’m proud of that background, and I bring it into my work: mixing perspectives, valuing accessibility, and designing for people who come from many places.</p>
-        <p>My current projects range from Arduino-based lighting and simple automation to web experiments and small tools. I focus on clean documentation so others can learn from and remix what I make. Going forward, I want to use my engineering skills to create artful systems—projects that function beautifully, invite curiosity, and reflect the diverse cultures that shaped me.</p>
-      </div>
-
-      <div class="inlinewrapper">
-        <h2>Projects</h2>
-        <div class="projects">
-          <a href="circuit.html">LightWave — LED Circuit (video + description)</a>
+      <main>
+        <div class="inlinewrapper">
+          <h2>Autobiography</h2>
+          <p>…your text here…</p>
         </div>
-      </div>
 
-      <div class="inlinewrapper">
-        <h2>Interactive Sketch</h2>
-        <div id="sketch-holder"></div>
-      </div>
+        <div class="inlinewrapper">
+          <h2>Projects</h2>
+          <a href="circuit.html">LightWave — LED Circuit</a>
+        </div>
 
-      <div class="inlinewrapper">
-        <h2>Contact</h2>
-        <p><strong>Email:</strong> a_ma@ucsb.edu<br />
-           <strong>GitHub:</strong> <a href="https://github.com/alistonma123">github.com/alistonma123</a></p>
-      </div>
-    </main>
+        <div class="inlinewrapper">
+          <h2>Interactive Sketch</h2>
+          <div id="sketch-holder"></div>
+        </div>
 
-    <footer>© <span id="y"></span> Aliston Ma · Built with HTML/CSS on GitHub Pages</footer>
+        <div class="inlinewrapper">
+          <h2>Contact</h2>
+          <p><strong>Email:</strong> a_ma@ucsb.edu<br>
+             <strong>GitHub:</strong> <a href="https://github.com/alistonma123">github.com/alistonma123</a></p>
+        </div>
+      </main>
+
+      <footer>© <span id="y"></span> Aliston Ma</footer>
+    </div>
   </div>
 
   <!-- Scripts -->
   <script src="canvas.js"></script>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
   <script src="sketch.js"></script>
+  <script src="intro.js"></script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
