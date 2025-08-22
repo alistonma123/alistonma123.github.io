@@ -4,62 +4,56 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aliston Ma — Autobiography</title>
-  <style>
-    :root { --bg:#0f1220; --card:#171a2b; --text:#e8ecff; --muted:#aab3d6; --accent:#7aa2ff; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:linear-gradient(180deg,var(--bg),#0b0e1a 60%);color:var(--text);line-height:1.6}
-    .wrap{max-width:900px;margin:40px auto;padding:24px}
-    header{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;background:var(--card);border-radius:20px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    header img{width:100%;max-height:350px;border-radius:16px;object-fit:cover;border:2px solid #2b3156}
-    h1{margin:0 0 6px;font-size:clamp(26px,4vw,38px);letter-spacing:.3px}
-    .subtitle{margin-top:2px;color:var(--muted)}
-    main{margin-top:24px;background:var(--card);border-radius:20px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    h2{margin-top:0;font-size:clamp(20px,3vw,26px);color:var(--accent)}
-    p{margin:0 0 14px}
-    .projects a{display:block;background:#14182c;border:1px solid #2b3156;border-radius:14px;padding:14px;text-decoration:none;color:var(--text)}
-    .projects a:hover{border-color:#3b4580}
-    footer{color:var(--muted);text-align:center;margin:20px 0 40px;font-size:14px}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    @media (max-width:640px){header{grid-template-columns:1fr;text-align:center}header img{margin:0 auto}}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Background canvas -->
+  <canvas id="myCanvas"></canvas>
+
   <div class="wrap">
-    <header>
+    <header class="inlinewrapper">
       <img src="IMG_3542.jpg" alt="Aliston Ma looking out at the horizon" />
       <div>
         <h1>Aliston Ma</h1>
-        <div class="subtitle">Rising 4th-year Computer Engineering @ UCSB • Circuits • Coding • Creative Tech</div>
+        <div class="subtitle">
+          Rising 4th-year Computer Engineering @ UCSB • Circuits • Coding • Creative Tech
+        </div>
       </div>
     </header>
 
     <main>
-      <h2>Autobiography</h2>
-      <p>I’m a rising fourth-year Computer Engineering major at UC Santa Barbara, and I love building things at the intersection of circuits, electronics, and code. Technology and design feel like two halves of the same brain to me—one handles precision and reliability, the other brings story and emotion. I’m happiest when I can blend both to make interactive projects that are clear, playful, and useful.</p>
-      <p>I grew up in a Chinese household while living in Mexico and studying in the United States. For years I crossed the border daily—school in the U.S., then back home to Mexico. That routine dropped me into different languages, customs, and ways of seeing the world. I’m proud of that background, and I bring it into my work: mixing perspectives, valuing accessibility, and designing for people who come from many places.</p>
-      <p>My current projects range from Arduino-based lighting and simple automation to web experiments and small tools. I focus on clean documentation so others can learn from and remix what I make. Going forward, I want to use my engineering skills to create artful systems—projects that function beautifully, invite curiosity, and reflect the diverse cultures that shaped me.</p>
-
-      <h2>Projects</h2>
-      <div class="projects">
-        <a href="circuit.html">LightWave — LED Circuit (video + description)</a>
+      <div class="inlinewrapper">
+        <h2>Autobiography</h2>
+        <p>I’m a rising fourth-year Computer Engineering major at UC Santa Barbara, and I love building things at the intersection of circuits, electronics, and code. Technology and design feel like two halves of the same brain to me—one handles precision and reliability, the other brings story and emotion. I’m happiest when I can blend both to make interactive projects that are clear, playful, and useful.</p>
+        <p>I grew up in a Chinese household while living in Mexico and studying in the United States. For years I crossed the border daily—school in the U.S., then back home to Mexico. That routine dropped me into different languages, customs, and ways of seeing the world. I’m proud of that background, and I bring it into my work: mixing perspectives, valuing accessibility, and designing for people who come from many places.</p>
+        <p>My current projects range from Arduino-based lighting and simple automation to web experiments and small tools. I focus on clean documentation so others can learn from and remix what I make. Going forward, I want to use my engineering skills to create artful systems—projects that function beautifully, invite curiosity, and reflect the diverse cultures that shaped me.</p>
       </div>
 
-    
-      <h2>Interactive Sketch</h2>
-      <div id="sketch-holder" style="margin:16px 0; border:1px solid #2b3156; border-radius:12px; overflow:hidden;"></div>
+      <div class="inlinewrapper">
+        <h2>Projects</h2>
+        <div class="projects">
+          <a href="circuit.html">LightWave — LED Circuit (video + description)</a>
+        </div>
+      </div>
 
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> a_ma@ucsb.edu<br />
-         <strong>GitHub:</strong> <a href="https://github.com/alistonma123">github.com/alistonma123</a></p>
+      <div class="inlinewrapper">
+        <h2>Interactive Sketch</h2>
+        <div id="sketch-holder"></div>
+      </div>
+
+      <div class="inlinewrapper">
+        <h2>Contact</h2>
+        <p><strong>Email:</strong> a_ma@ucsb.edu<br />
+           <strong>GitHub:</strong> <a href="https://github.com/alistonma123">github.com/alistonma123</a></p>
+      </div>
     </main>
 
     <footer>© <span id="y"></span> Aliston Ma · Built with HTML/CSS on GitHub Pages</footer>
   </div>
 
+  <!-- Scripts -->
+  <script src="canvas.js"></script>
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-  
-  <!-- Load p5.js and your sketch -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
   <script src="sketch.js"></script>
 </body>
