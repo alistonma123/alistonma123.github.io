@@ -25,6 +25,7 @@ function typeWriter() {
       setTimeout(typeWriter, 600);
     }
   } else {
+    cursor.style.display = "none";
     enterBtn.classList.add("show");
   }
 }
