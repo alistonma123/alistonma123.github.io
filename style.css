@@ -114,3 +114,7 @@ a:hover{text-decoration:underline}
   width:100vw;height:100vh;
   z-index:-1
 }
+
+#sketch-holder{min-height:420px}
+#sketch-holder canvas{display:block;margin:0 auto}
+
