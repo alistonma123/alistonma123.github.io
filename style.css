@@ -51,9 +51,10 @@ p{margin:0 0 14px}
   border-radius:14px;
   padding:14px;
   text-decoration:none;
-  color:var(--text)
+  color:var(--text);
+  transition:border-color .3s, transform .2s
 }
-.projects a:hover{border-color:#3b4580}
+.projects a:hover{border-color:#3b4580;transform:translateY(-2px)}
 
 footer{color:var(--muted);text-align:center;margin:20px 0 40px;font-size:14px}
 a{color:var(--accent);text-decoration:none}
@@ -62,8 +63,9 @@ a:hover{text-decoration:underline}
 @media (max-width:640px){
   header{grid-template-columns:1fr;text-align:center}
   header img{margin:0 auto}
+  .wrap{padding:16px}
+  main{padding:16px}
 }
-
 
 #intro{
   position:fixed;
@@ -84,7 +86,7 @@ a:hover{text-decoration:underline}
   font-size:22px;
   line-height:1.5;
   white-space:pre-line;
-  max-width:600px;
+  max-width:500px;
   margin:0 auto
 }
 #cursor{
@@ -107,7 +109,6 @@ a:hover{text-decoration:underline}
 }
 #enter-btn.show{opacity:1}
 
-
 #myCanvas{
   position:fixed;
   top:0;left:0;
@@ -115,6 +116,5 @@ a:hover{text-decoration:underline}
   z-index:-1
 }
 
-#sketch-holder{min-height:420px}
-#sketch-holder canvas{display:block;margin:0 auto}
-
+#sketch-holder{min-height:420px;position:relative}
+#sketch-holder canvas{display:block;margin:0 auto;max-width:100%}
