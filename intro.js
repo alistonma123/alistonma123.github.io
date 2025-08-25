@@ -2,7 +2,7 @@ const introLines = [
   "Welcome to my site.",
   "I’m Aliston Ma.",
   "Engineer • Designer • Builder.",
-  "Click Enter Below to Proceed"
+  "Click Enter to Proceed"
 ];
 
 let i = 0;
@@ -10,7 +10,6 @@ let j = 0;
 const speed = 60;
 const introDiv = document.getElementById("intro-text");
 const enterBtn = document.getElementById("enter-btn");
-const cursor = document.getElementById("cursor");
 
 function typeWriter() {
   if (i < introLines.length) {
@@ -35,6 +34,5 @@ enterBtn.addEventListener("click", () => {
   document.getElementById("intro").classList.add("fade-out");
   setTimeout(() => {
     document.getElementById("intro").style.display = "none";
-    if (window.startCanvas) window.startCanvas();
   }, 1000);
 });
