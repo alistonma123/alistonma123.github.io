@@ -1,7 +1,7 @@
 const introLines = [
   "Welcome to my site.",
   "I’m Aliston Ma.",
-  "Engineer • Designer • Builder.",
+  " Engineer • Designer • Coder ",
   "Click Enter Below to Proceed"
 ];
 
@@ -11,6 +11,14 @@ const speed = 60;
 const introDiv = document.getElementById("intro-text");
 const enterBtn = document.getElementById("enter-btn");
 const cursor = document.getElementById("cursor");
+
+// Check if intro was already shown before
+if (localStorage.getItem("introSeen") === "true") {
+  document.getElementById("intro").style.display = "none";
+  if (window.startCanvas) window.startCanvas();
+} else {
+  typeWriter();
+}
 
 function typeWriter() {
   if (i < introLines.length) {
@@ -30,10 +38,9 @@ function typeWriter() {
   }
 }
 
-typeWriter();
-
 enterBtn.addEventListener("click", () => {
   document.getElementById("intro").classList.add("fade-out");
+  localStorage.setItem("introSeen", "true");
   setTimeout(() => {
     document.getElementById("intro").style.display = "none";
     if (window.startCanvas) window.startCanvas();
