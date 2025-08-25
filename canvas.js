@@ -1,50 +1,120 @@
-const c=document.getElementById("myCanvas");
-const ctx=c.getContext("2d");
+:root { --bg:#0f1220; --card:#171a2b; --text:#e8ecff; --muted:#aab3d6; --accent:#7aa2ff; }
+*{box-sizing:border-box}
 
-function resize(){c.width=window.innerWidth;c.height=window.innerHeight}
-window.addEventListener("resize",resize);
-resize();
-
-const COUNT=20;
-const particles=Array.from({length:COUNT},()=>({
-  x:Math.random()*c.width,
-  y:Math.random()*c.height,
-  r:Math.random()*1.5+0.8,
-  dx:(Math.random()-0.5)*0.25,
-  dy:(Math.random()-0.5)*0.25
-}));
-
-let running=false;
-let alpha=0;
-let last=0;
-const interval=1000/30;
-
-function step(t){
-  if(!running){requestAnimationFrame(step);return}
-  if(t-last<interval){requestAnimationFrame(step);return}
-  last=t;
-
-  ctx.clearRect(0,0,c.width,c.height);
-  ctx.fillStyle=`rgba(15,18,32,${Math.min(alpha,0.22)})`;
-  ctx.fillRect(0,0,c.width,c.height);
-
-  for(const p of particles){
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(122,162,255,${alpha*0.7})`;
-    ctx.fill();
-    p.x+=p.dx;p.y+=p.dy;
-    if(p.x<0||p.x>c.width)p.dx*=-1;
-    if(p.y<0||p.y>c.height)p.dy*=-1;
-  }
-
-  if(alpha<0.55)alpha+=0.008;
-  requestAnimationFrame(step);
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+  background:linear-gradient(180deg,var(--bg),#0b0e1a 60%);
+  color:var(--text);
+  line-height:1.6
 }
 
-requestAnimationFrame(step);
+.wrap{max-width:900px;margin:40px auto;padding:24px}
 
-window.startCanvas=function(){
-  running=true;
-  alpha=0;
-};
+header{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  align-items:center;
+  background:var(--card);
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35)
+}
+
+header img{
+  width:100%;
+  max-height:350px;
+  border-radius:16px;
+  object-fit:cover;
+  border:2px solid #2b3156
+}
+
+h1{margin:0 0 6px;font-size:clamp(26px,4vw,38px);letter-spacing:.3px}
+.subtitle{margin-top:2px;color:var(--muted)}
+
+main{
+  margin-top:24px;
+  background:var(--card);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35)
+}
+
+h2{margin-top:0;font-size:clamp(20px,3vw,26px);color:var(--accent)}
+p{margin:0 0 14px}
+
+.projects a{
+  display:block;
+  background:#14182c;
+  border:1px solid #2b3156;
+  border-radius:14px;
+  padding:14px;
+  text-decoration:none;
+  color:var(--text);
+  transition:border-color .3s, transform .2s
+}
+.projects a:hover{border-color:#3b4580;transform:translateY(-2px)}
+
+footer{color:var(--muted);text-align:center;margin:20px 0 40px;font-size:14px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+@media (max-width:640px){
+  header{grid-template-columns:1fr;text-align:center}
+  header img{margin:0 auto}
+  .wrap{padding:16px}
+  main{padding:16px}
+}
+
+#intro{
+  position:fixed;
+  inset:0;
+  background:black;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-family:monospace;
+  text-align:center;
+  z-index:200;
+  transition:opacity 1s ease
+}
+#intro.fade-out{opacity:0;pointer-events:none}
+#intro-text{
+  font-size:22px;
+  line-height:1.5;
+  white-space:pre-line;
+  max-width:500px;
+  margin:0 auto
+}
+#cursor{
+  font-size:22px;
+  margin-top:10px;
+  animation:blink 1s infinite
+}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+#enter-btn{
+  margin-top:30px;
+  padding:10px 20px;
+  background:#fff;
+  color:#000;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  font-size:16px;
+  opacity:0;
+  transition:opacity 1s
+}
+#enter-btn.show{opacity:1}
+
+#myCanvas{
+  position:fixed;
+  top:0;left:0;
+  width:100vw;height:100vh;
+  z-index:-1
+}
+
+#sketch-holder{min-height:420px;position:relative}
+#sketch-holder canvas{display:block;margin:0 auto;max-width:100%}
