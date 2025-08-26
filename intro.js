@@ -1,7 +1,7 @@
 const introLines=[
   "Welcome to my site.",
   "I’m Aliston Ma.",
-  "Engineer • Designer • Builder.",
+  "Engineer • Designer • Builder",
   "Click Enter Below to Proceed"
 ];
 
