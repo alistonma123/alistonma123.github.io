@@ -7,8 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Intro Overlay -->
+  <div id="intro">
+    <div id="intro-text"></div>
+    <span id="cursor">|</span>
+    <button id="enter-btn">ENTER</button>
+  </div>
+
+  <!-- Background Canvas -->
   <canvas id="myCanvas"></canvas>
 
+  <!-- Main Content -->
   <div class="wrap">
     <header>
       <img src="IMG_3542.jpg" alt="Aliston Ma looking out at the horizon" />
@@ -26,7 +35,7 @@
 
       <h2>Projects</h2>
       <div class="projects">
-        <a href="circuit.html">LightWave — LED Circuit (video + description)</a>
+        <a href="circuit.html">LightWave — LED Circuit</a>
       </div>
 
       <h2>Interactive Sketch</h2>
@@ -40,9 +49,11 @@
     <footer>© <span id="y"></span> Aliston Ma · Built with HTML/CSS on GitHub Pages</footer>
   </div>
 
+  <!-- Scripts -->
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
   <script src="sketch.js"></script>
   <script src="canvas.js"></script>
+  <script src="intro.js"></script>
 </body>
 </html>
