@@ -46,3 +46,5 @@ enterBtn.addEventListener("click", () => {
     if (window.startCanvas) window.startCanvas();
   }, 1000);
 });
+
+
