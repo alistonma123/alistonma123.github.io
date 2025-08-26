@@ -97,3 +97,27 @@ a:hover{text-decoration:underline}
 }
 @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
 #enter-btn{
+  margin-top:30px;
+  padding:10px 20px;
+  background:#fff;
+  color:#000;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  font-size:16px;
+  opacity:0;
+  transition:opacity 1s
+}
+#enter-btn.show{opacity:1}
+
+/* Background canvas */
+#myCanvas{
+  position:fixed;
+  top:0;left:0;
+  width:100vw;height:100vh;
+  z-index:-1
+}
+
+/* p5 area */
+#sketch-holder{min-height:420px;position:relative}
+#sketch-holder canvas{display:block;margin:0 auto;max-width:100%}
