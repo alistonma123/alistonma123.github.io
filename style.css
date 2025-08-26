@@ -67,7 +67,6 @@ a:hover{text-decoration:underline}
   main{padding:16px}
 }
 
-/* Intro overlay */
 #intro{
   position:fixed;
   inset:0;
@@ -110,7 +109,6 @@ a:hover{text-decoration:underline}
 }
 #enter-btn.show{opacity:1}
 
-/* Background canvas */
 #myCanvas{
   position:fixed;
   top:0;left:0;
@@ -118,6 +116,5 @@ a:hover{text-decoration:underline}
   z-index:-1
 }
 
-/* p5 area */
 #sketch-holder{min-height:420px;position:relative}
 #sketch-holder canvas{display:block;margin:0 auto;max-width:100%}
