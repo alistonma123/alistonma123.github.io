@@ -52,54 +52,54 @@
    "hold your breath"
  ];
  let whispers = [];
- 
  function setup() {
-   createCanvas(windowWidth, windowHeight);
-   noStroke();
-   layoutScene();
- }
- 
- function windowResized() {
-   resizeCanvas(windowWidth, windowHeight);
-   layoutScene();
- }
- 
- function layoutScene() {
-   cig = {
-     x: width * 0.66,
-     y: height * 0.74 - 6,
-     angle: -PI / 28,
-     len: 78,
-     thick: 10,
-     emberX: 0,
-     emberY: 0,
-     homeX: width * 0.66,
-     homeY: height * 0.74 - 6
-   };
- 
-   const deskX = width * 0.6;
-   const deskY = height * 0.74;
-   camObj.homeX = deskX + 28;
-   camObj.homeY = deskY - 8;
-   if (!camObj.held) {
-     camObj.x = camObj.homeX;
-     camObj.y = camObj.homeY;
-   }
- 
-   // Bed smaller: ~30% width, ~10% height of canvas
-   bedRect.w = width * 0.30;
-   bedRect.h = height * 0.10;
-   bedRect.x = width * 0.12;
-   bedRect.y = height * 0.68;
- 
-   bedRect.pillow = {
-     x: bedRect.x + bedRect.w * 0.08,
-     y: bedRect.y - bedRect.h * 0.35,
-     w: bedRect.w * 0.35,
-     h: bedRect.h * 0.35
-   };
- }
- 
+  let c = createCanvas(windowWidth, windowHeight);
+  c.parent("sketch-holder");   // attach canvas to the container in tobacco.html
+  noStroke();
+  layoutScene();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  layoutScene();
+}
+
+function layoutScene() {
+  cig = {
+    x: width * 0.66,
+    y: height * 0.74 - 6,
+    angle: -PI / 28,
+    len: 78,
+    thick: 10,
+    emberX: 0,
+    emberY: 0,
+    homeX: width * 0.66,
+    homeY: height * 0.74 - 6
+  };
+
+  const deskX = width * 0.6;
+  const deskY = height * 0.74;
+  camObj.homeX = deskX + 28;
+  camObj.homeY = deskY - 8;
+  if (!camObj.held) {
+    camObj.x = camObj.homeX;
+    camObj.y = camObj.homeY;
+  }
+
+  // Bed smaller: ~30% width, ~10% height of canvas
+  bedRect.w = width * 0.30;
+  bedRect.h = height * 0.10;
+  bedRect.x = width * 0.12;
+  bedRect.y = height * 0.68;
+
+  bedRect.pillow = {
+    x: bedRect.x + bedRect.w * 0.08,
+    y: bedRect.y - bedRect.h * 0.35,
+    w: bedRect.w * 0.35,
+    h: bedRect.h * 0.35
+  };
+}
+
  function draw() {
    if (gameState === "sleep") {
      drawSleepScene();
