@@ -4,14 +4,12 @@ const introLines=[
   "Engineer • Designer • Builder",
   "Click Enter Below to Proceed"
 ];
-
 let i=0,j=0;
 const speed=60;
 const intro=document.getElementById("intro");
 const introDiv=document.getElementById("intro-text");
 const enterBtn=document.getElementById("enter-btn");
 const cursor=document.getElementById("cursor");
-
 const seen=sessionStorage.getItem("introSeen")==="true";
 if(seen){
   intro.style.display="none";
@@ -19,7 +17,6 @@ if(seen){
 }else{
   typeWriter();
 }
-
 function typeWriter(){
   if(i<introLines.length){
     if(j<introLines[i].length){
@@ -36,7 +33,6 @@ function typeWriter(){
     enterBtn.classList.add("show");
   }
 }
-
 enterBtn.addEventListener("click",()=>{
   intro.classList.add("fade-out");
   sessionStorage.setItem("introSeen","true");
