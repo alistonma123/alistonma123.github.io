@@ -118,15 +118,32 @@ a:hover{text-decoration:underline}
   z-index:-1
 }
 
+/* Default sketch box (Kandinsky and others) */
 #sketch-holder{
-  width:100vw;
-  height:100vh;
-  margin:0;
-  padding:0;
+  margin:16px 0;
+  border:1px solid #2b3156;
+  border-radius:12px;
+  overflow:hidden;
 }
 #sketch-holder canvas{
   display:block;
   margin:0 auto;
   max-width:100%;
-  max-height:100%;
+  height:auto;
+}
+
+/* Fullscreen only on tobacco page */
+.tobacco-page #sketch-holder{
+  width:100vw;
+  height:100vh;
+  margin:0;
+  padding:0;
+  border:none;
+  border-radius:0;
+}
+.tobacco-page #sketch-holder canvas{
+  display:block;
+  margin:0;
+  max-width:none;
+  max-height:none;
 }
