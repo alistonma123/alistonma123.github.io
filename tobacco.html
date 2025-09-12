@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Turquoise and Tobacco — Aliston Ma</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body { margin:0; padding:0; height:100%; overflow:hidden; background:#0b1220; }
+    canvas { display:block; position:fixed; inset:0; }
+  </style>
 </head>
 <body class="tobacco-page">
   <div id="sketch-holder"></div>
@@ -17,10 +21,13 @@
     © <span id="y"></span> Aliston Ma
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <!-- p5 core + SOUND (sound is required by your sketch) -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/addons/p5.sound.min.js"></script>
+
+  <!-- your sketch -->
   <script src="tobacco.js"></script>
 </body>
 </html>
