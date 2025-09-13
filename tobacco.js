@@ -143,7 +143,7 @@ function preload() {
     fast:     loadSound('assets/FAST_MUSIC.mp3'),
     inhale:   loadSound('assets/INHALE_CIG.mp3'),
     drink:    loadSound('assets/DRINKING.mp3'),
-    openDoor: loadSound('assets/OPEN DOOR.mp3')
+    openDoor: loadSound('assets/OPEN_DOOR.mp3')
   };
 
   // One-shots should always restart cleanly
